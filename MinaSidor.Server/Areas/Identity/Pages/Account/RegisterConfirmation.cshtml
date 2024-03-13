@@ -1,0 +1,22 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Registrering slutförd!";
+}
+
+<div class="registration-complete">
+    <h1>@ViewData["Title"]</h1>
+    @{
+        if (@Model.DisplayConfirmAccountLink)
+        {
+            <a class="nav-link btn btn-default" id="login" asp-area="Identity" asp-page="/Account/Login">Logga in</a>
+        }
+        else
+        {
+            <p>
+                    Please check your email to confirm your account.
+            </p>
+        }
+    }
+</div>
+

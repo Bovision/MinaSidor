@@ -1,0 +1,36 @@
+﻿<h2>Customer Information</h2>
+
+@if (Model != null && Model.status == "OK" && Model.data != null)
+    {
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Customer No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Updated At</th>
+                <th>Company Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model.data)
+                {
+                <tr>
+                    <td>@customer.customer_no</td>
+                    <td>@customer.name</td>
+                    <td>@customer.contact.email</td>
+                    <td>@customer.contact.phone</td>
+                    <td>@customer.address.city</td>
+                    <td>@customer.updated_at</td>
+                    <td>@customer.company_type</td>
+                </tr>
+                }
+        </tbody>
+    </table>
+    }
+else
+    {
+    <p>No customer data available.</p>
+    }
