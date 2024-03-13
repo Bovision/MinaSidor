@@ -1,0 +1,43 @@
+
+.HeaderDiv {
+    position:fixed;
+    display: flex;
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.HeaderLeft{
+    padding: 20px;
+}
+.menuList {
+    list-style: none;
+    display: flex;
+}
+.menuList li {
+    font-size: 16px;
+    margin: 10px;
+
+}
+.HeaderMid {
+
+}
+
+.HeaderRight {
+    padding: 20px;
+}
+
+    .HeaderRight button {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        width: 117px;
+        height: 40px;
+        border-radius: 6px;
+        border: 1px solid white;
+        background-color: #08437A;
+        color: white;
+    }

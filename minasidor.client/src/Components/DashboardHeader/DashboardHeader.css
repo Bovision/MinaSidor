@@ -1,0 +1,29 @@
+.dashboardHeader {
+    background-color: #F9FAFC;
+    width: 900px;
+    
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0px 12px 0px 0px;
+}
+.dashboardHeaderLeft {
+    margin-left: 20px;
+    display: flex;
+}
+.dashboardHeaderRight {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.dashboardHeaderRight p {
+    margin-left: 10px;
+}
+.dashboardHeaderProfilePic {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: 0% 0%;
+    border-radius: 20px;
+}

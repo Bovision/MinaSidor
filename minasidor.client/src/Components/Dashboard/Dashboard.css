@@ -1,0 +1,16 @@
+.dashboard {
+    display:flex;
+    height: 100%;
+    /*background-color: white;*/ 
+    
+}
+
+.dashboardHeader {
+    
+}
+
+.dashboardMenu {
+    border-radius: 12px 0px 0px 0px;
+    
+    width: 280px;
+}

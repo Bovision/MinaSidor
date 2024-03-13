@@ -1,0 +1,16 @@
+.FooterDiv {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #888888
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
