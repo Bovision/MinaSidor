@@ -1,0 +1,52 @@
+{
+    "email": {
+      "en": "Email",
+      "sv": "E-post"
+    },
+    "welcome": {
+        "en": "Welcome",
+        "sv": "Välkommen"
+    },
+    "startpage": {
+        "en": "Start page",
+        "sv": "Startsida"
+    }, 
+    "reasestateads": {
+        "en": "Real estate ads",
+        "sv": "Bostadsannonser"
+    }, 
+    "realestateadsinfo": {
+        "en": "Here you can see your active housing ads and boost the ad so that they end up higher in the search results.",
+        "sv": "Här kan du se era aktiva bostadsannonser och boosta annonsen för att de ska hamna högre upp i sökresultatet."
+    },
+    "REAadvertiseAdsBtn": {
+        "en": "Advertise ads",
+        "sv": "Marknadsför annonser"
+    },
+    "REAadvertiseAdsSearch": {
+        "en": "Search", 
+        "sv": "Sök på adress"
+    },
+    "interests": {
+        "en": "Expressions of interest",
+        "sv": "Intresseanmälningar"
+    }, 
+    "leads": {
+        "en": "Leads",
+        "sv": "Leads"
+    },
+    "billing": {
+        "en": "Billing",
+        "sv": "Fakturering"
+    },
+    "marketing": {
+        "en": "Marketing",
+        "sv": "Marknadsföring"
+    },
+    "portal": {
+        "en": "Customer Portal",
+        "sv": "Kundportalen"
+    }
+
+    
+  }

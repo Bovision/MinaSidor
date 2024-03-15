@@ -1,0 +1,32 @@
+{
+    "login": {
+      "en": "Login",
+      "sv": "Logga in"
+    },
+    "search": {
+      "en": "Search",
+      "sv": "Sök bostad"
+    },
+    "tips": {
+        "en": "Tips",
+        "sv": "Läsvärt"
+    },
+    "advertise": {
+        "en": "Advertise",
+        "sv": "Annonsera"
+    }, 
+    "regonline": {
+        "en": "RegOnline",
+        "sv": "RegOnline"
+    }, 
+    "contact": {
+        "en": "Contact",
+        "sv": "Kontakt"
+    }, 
+    "about": {
+        "en": "About Bovision",
+        "sv": "Om Bovision"
+    }
+
+    
+  }

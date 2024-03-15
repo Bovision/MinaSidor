@@ -1,16 +1,67 @@
 .dashboard {
-    display:flex;
+    display: flex;
     height: 100%;
-    /*background-color: white;*/ 
-    
+    border-radius: 12px 12px 12px 12px;
+    background-color: white;
 }
 
 .dashboardHeader {
-    
+    border-radius: 0px 12px 0px 0px;
+    border-bottom: 1px solid var(--Linjer, #D0D0D0);
+    background: #F9FAFC;
 }
 
 .dashboardMenu {
-    border-radius: 12px 0px 0px 0px;
-    
+    border-radius: 12px 0px 0px 12px; 
+    border-right: 1px solid var(--Linjer, #D0D0D0);
+    background: #F9FAFC;
     width: 280px;
+}
+
+.dashboardContent {
+    padding: 20px; 
+}
+.rubrik {
+    color: #000;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.REA-infotext {
+    width: 65%;
+}
+.REAadvertiseAdsBtn {
+    width: 227px;
+    height: 40px;
+    border-radius: 6px;
+    border: 0px solid #FBBC04;
+    background: #FBBC04;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 32px;
+    color: var(--Black-coal, rgba(40, 40, 40, 0.90));
+    text-align: center;
+    /* font-family: Poppins; */
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.REA-cardListHeader {
+    margin-top: 46px;
+    display: flex;
+    justify-content: space-between;
+}
+.mellanrubrik {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.REA-searchField {
+    border-radius: 6px;
+    border: 1px solid #9D8989;   
+    background: #FFF;
+    padding-left: 20px;
 }

@@ -1,0 +1,39 @@
+.dashboardMenuContent {
+    margin-left: 40px;
+    height: 100%;
+}
+.dashboardMenuContent h1 {
+    margin-bottom: 72px;
+    padding-top: 48px;
+    font-weight: 400;
+}
+.dashboardMenuOptions {
+    display: flex;
+    flex-direction: column;
+    
+
+    
+
+}
+
+.dashboardMenuOptions a {
+    
+    color: #665B5B;
+    
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+.dashboardMenyIcon {
+    width: 16px;
+}
+.menuOption img {
+    margin-right: 10px;
+}
+.menuOption {
+    padding: 8px 0px;
+    margin-bottom: 16px;
+}
