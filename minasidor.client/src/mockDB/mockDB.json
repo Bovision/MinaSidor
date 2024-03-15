@@ -1,0 +1,28 @@
+[
+    {
+        "Id":1234,
+        "mainImageUrl":"", 
+        "address": "Gatan 4",
+        "area":"Frölunda", 
+        "city":"Göteborg", 
+        "country":"Sverige", 
+        "REAType":"Bostadsrätt", 
+        "price": 4000000, 
+        "size": 51, 
+        "rent": 5538, 
+        "rooms": 3
+    },
+    {
+        "Id":1235,
+        "mainImageUrl":"", 
+        "address": "Gatan 42",
+        "area":"Frölunda3", 
+        "city":"Göteborg3", 
+        "country":"Sverige3", 
+        "REAType":"Bostadsrätt3", 
+        "price": 40000003, 
+        "size": 513, 
+        "rent": 55383, 
+        "rooms": 33
+    }
+]

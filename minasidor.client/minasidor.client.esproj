@@ -9,6 +9,9 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="src\Components\Dashboard\DashboardSub1\" />
+    <Folder Include="src\Components\Dashboard\DashboardMain\" />
+    <Folder Include="src\Components\LandingPage\" />
     <Folder Include="src\Components\Search\" />
   </ItemGroup>
 </Project>

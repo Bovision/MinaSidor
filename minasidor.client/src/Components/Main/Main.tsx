@@ -2,8 +2,10 @@ import { Route, Routes } from "react-router";
 import React from 'react'
 
 import './Main.css'
-
+import LandingPage from '../LandingPage/LandingPage'
 import DashBoard from '../Dashboard/Dashboard'
+
+
 import Search from '../Search/Search'
 
 const  Main = () => {
@@ -12,15 +14,11 @@ const  Main = () => {
         
             <div className="routes">
                 <Routes>
-                    <Route path="/" element={<DashBoard />} />
+                    <Route path="/" element={<LandingPage /> } />
+                    <Route path="/dashboard/*" element={<DashBoard />} />
+                    
                     <Route path="/search" element={<Search />} />
-                    {/*<Route path="/shopingcart" element={<ShopingCart />} />*/}
-                    {/*<Route path="/kontakta-oss" element={<Contact />} />*/}
-                    {/*<Route path="/kassa" element={<Checkout />} />*/}
-                    {/*<Route path="/order" element={<OrderConfirm />} />*/}
-                    {/*<Route path="/adminpanel" element={<Adminpanel />} />*/}
-                    {/*<Route path="/news" element={<News />} />*/}
-                    {/*<Route path="/rea" element={<Rea />} />*/}
+
                 </Routes>
             </div>
         
