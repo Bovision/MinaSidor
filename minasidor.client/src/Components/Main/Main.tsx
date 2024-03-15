@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router";
-import React from 'react'
 
 import './Main.css'
 

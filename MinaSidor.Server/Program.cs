@@ -1,55 +1,77 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using MinaSidor.Server.Areas.Identity.Data;
-using MinaSidor.Server.Data;
+using MinaSidor.Core.Mapping;
+using MinaSidor.Extensions;
+using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
 using System.Data.Common;
+
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("MinaSidorServerContextConnection") ?? throw new InvalidOperationException("Connection string 'MinaSidorServerContextConnection' not found.");
-DbProviderFactories.RegisterFactory("System.Data.SqlClient", System.Data.SqlClient.SqlClientFactory.Instance);
-builder.Services.AddDbContext<MinaSidorServerContext>(options => options.UseSqlServer(connectionString));
-
-builder.Services.AddDefaultIdentity<BovisionUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>().AddEntityFrameworkStores<MinaSidorServerContext>();
-
-builder.Services.Configure<IdentityOptions>(options =>
-{
-    // Default Password settings.
-    options.Password.RequireDigit = false;
-    options.Password.RequireLowercase = false;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
-    options.Password.RequiredLength = 1;
-    options.Password.RequiredUniqueChars = 0;
-});
 
 // Add services to the container.
+builder.ConnectDatabase();
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddAntiforgery(options => options.HeaderName = "X-XSRF-Token");
+
+builder.Services.ConfigureAppServices();
+
+builder.Services.AddCustomizedIdentity();
+builder.Services.AddCustomizedAuthorization();
+
+builder.Services.ConfigureControllers();
+builder.Services.AddFluentValidation();
+MappingGlobalSettings.Apply();
+
+builder.Services.AddSwagger();
+builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
-
-app.UseDefaultFiles();
-app.UseStaticFiles();
+DbProviderFactories.RegisterFactory("System.Data.SqlClient", System.Data.SqlClient.SqlClientFactory.Instance);
 
 // Configure the HTTP request pipeline.
-
+if (app.Environment.IsDevelopment())
+    {
     app.UseSwagger();
     app.UseSwaggerUI();
 
+    app.UseMigrationsEndPoint();
+    }
+else
+    {
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+    }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-app.UseAuthentication(); ;
-app.MapRazorPages();
-app.UseAuthorization();
-app.MapControllerRoute(
-    name: "Role",
-    pattern: "{controller=Role}/{action=Index}/{id?}");
 
-app.MapFallbackToFile("/index.html");
+app.UseCookiePolicy();
+app.UseIdentityServer();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller}/{action=Index}/{id?}");
+
+app.MapFallbackToFile("index.html");
+
+app.CreateRoles();
+app.CreateAdministrator();
+if (app.Environment.IsDevelopment())
+    {
+    app.CreateTestUsers();
+
+    if (args.Contains("--fakedata"))
+        {
+        app.Logger.LogInformation("Generating fake data, please be patient");
+        app.CreateFakeData();
+        app.Logger.LogInformation("Fake data have been generated");
+        }
+    }
 
 app.Run();
+
+public partial class Program { }
