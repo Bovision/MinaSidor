@@ -1,6 +1,4 @@
 // DashboardMain.tsx
-import React from 'react';
-import { Route, Routes } from 'react-router';
 import { useTranslation } from "react-i18next";
 
 

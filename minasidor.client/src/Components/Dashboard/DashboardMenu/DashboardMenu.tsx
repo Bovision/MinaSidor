@@ -1,5 +1,4 @@
 // DashboardMenu.tsx
-import React from 'react';
 import './DashboardMenu.css'
 import Ads from '../../../assets/Ads-1--Streamline-Ultimate 1.svg'
 import Card from '../../../assets/Credit-Card-1--Streamline-Ultimate 1.svg'

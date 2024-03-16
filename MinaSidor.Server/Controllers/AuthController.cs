@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Attributes;
+using Microsoft.AspNetCore.Cors;
 
 namespace MinaSidor.Controllers;
 
@@ -35,6 +36,8 @@ public class AuthController : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [EnableCors]
+
     public async Task<IStatusCodeActionResult> LogInAsync([FromBody] LogInDto login)
     {
         if (await _authService.LogInAsync(login))

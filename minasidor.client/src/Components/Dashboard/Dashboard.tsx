@@ -1,6 +1,5 @@
 // Dashboard.tsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {Route } from 'react-router-dom';
 import { Routes } from 'react-router'
 import DashboardHeader from './DashboardHeader/DashboardHeader';
 import DashboardMenu from './DashboardMenu/DashboardMenu';
@@ -10,13 +9,13 @@ import DashboardIntresse from './DashboardIntresse/DashboardIntresse'
 import DashboardLeads from './DashboardLeads/DashboardLeads'
 import DashboardFakturering from './DashboardFakturering/DashboardFakturering'
 import DashboardMarknad from './DashboardMarknad/DashboardMarknad';
-import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 
 
 import './Dashboard.css';
 
 const Dashboard = () => {
-    const { t } = useTranslation("dashboard");
+   // const { t } = useTranslation("dashboard");
     
     return (
         <div className="dashboard">
