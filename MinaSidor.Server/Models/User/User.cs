@@ -10,7 +10,7 @@
         public string UserName { get; set; }
         public string PhoneNumber { get; set; }
         public string Role { get; set; }
-        public bool enabled { get; set; }
+        public bool Enabled { get; set; }
 
 
     }

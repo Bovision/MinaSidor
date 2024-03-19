@@ -1,77 +1,120 @@
-using MinaSidor.Core.Mapping;
-using MinaSidor.Extensions;
-using Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Data;
 using System.Data.Common;
-
+using Service;
+using Service.UserGroup;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
+var appSettings = builder.Configuration.GetSection("TokenSettings").Get<TokenSettings>() ?? default!;
+builder.Services.AddSingleton(appSettings);
+var connectionString = builder.Configuration.GetConnectionString("MinaSidorServerContextConnection") ?? throw new InvalidOperationException("Connection string 'MinaSidorServerContextConnection' not found.");
+DbProviderFactories.RegisterFactory("System.Data.SqlClient", System.Data.SqlClient.SqlClientFactory.Instance);
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddIdentityCore<ApplicationUser>()
+    .AddRoles<IdentityRole>()
+    .AddSignInManager()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>("REFRESHTOKENPROVIDER");
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
+{
+    options.TokenLifespan = TimeSpan.FromSeconds(appSettings.RefreshTokenExpireSeconds);
+});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters
+        {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        RequireExpirationTime = true,
+        ValidIssuer = appSettings.Issuer,
+        ValidAudience = appSettings.Audience,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(appSettings.SecretKey)),
+        ClockSkew = TimeSpan.FromSeconds(0)
+        };
+});
+
+builder.Services.AddScoped<ApplicationDbContextInitialiser>();
+builder.Services.AddTransient<UserService>();
+
 
 // Add services to the container.
-builder.ConnectDatabase();
 
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("webAppRequests", builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .WithOrigins(appSettings.Audience)
+        .AllowCredentials();
+    });
+});
 
-builder.Services.AddAntiforgery(options => options.HeaderName = "X-XSRF-Token");
-
-builder.Services.ConfigureAppServices();
-
-builder.Services.AddCustomizedIdentity();
-builder.Services.AddCustomizedAuthorization();
-
-builder.Services.ConfigureControllers();
-builder.Services.AddFluentValidation();
-MappingGlobalSettings.Apply();
-
-builder.Services.AddSwagger();
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddSwaggerGen(config =>
+{
+    config.SwaggerDoc("v1", new OpenApiInfo() { Title = "App Api", Version = "v1" });
+    config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+        In = ParameterLocation.Header,
+        Description = "Please enter token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+        });
+    config.AddSecurityRequirement(
+        new OpenApiSecurityRequirement{
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type=ReferenceType.SecurityScheme,
+                                    Id="Bearer"
+                                }
+                            },
+                            Array.Empty<string>()
+                        }
+        });
+});
 
 var app = builder.Build();
-DbProviderFactories.RegisterFactory("System.Data.SqlClient", System.Data.SqlClient.SqlClientFactory.Instance);
+
+app.UseDefaultFiles();
+app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-    {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 
-    app.UseMigrationsEndPoint();
-    }
-else
-    {
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-    }
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCors("webAppRequests");
 app.UseRouting();
-
-app.UseCookiePolicy();
-app.UseIdentityServer();
-
-app.UseAuthentication();
+app.UseAuthentication(); ;
+//app.MapRazorPages();
 app.UseAuthorization();
-
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
+    name: "Role",
+    pattern: "{controller=Role}/{action=Index}/{id?}");
 
-app.MapFallbackToFile("index.html");
-
-app.CreateRoles();
-app.CreateAdministrator();
-if (app.Environment.IsDevelopment())
-    {
-    app.CreateTestUsers();
-
-    if (args.Contains("--fakedata"))
-        {
-        app.Logger.LogInformation("Generating fake data, please be patient");
-        app.CreateFakeData();
-        app.Logger.LogInformation("Fake data have been generated");
-        }
-    }
+app.MapFallbackToFile("/index.html");
 
 app.Run();
-
-public partial class Program { }
