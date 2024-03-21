@@ -5,6 +5,7 @@ import { initReactI18next } from "react-i18next";
 // import navbar from "./json/navbar.json";
 import dashboard from "./json/dashboard.json";
 import header from './json/header.json'
+import userPages from './json/userPages.json'
 
 function customLangHandlar(inputJson, lang) {
   const result = {};
@@ -26,12 +27,14 @@ i18n
         // navbar: customLangHandlar(navbar, "en"),
         dashboard: customLangHandlar(dashboard, "en"),
         header: customLangHandlar(header, "en"),
+        userPages: customLangHandlar(userPages, "en"),
       },
       sv: {
         // login: customLangHandlar(login, "sv"),
         // navbar: customLangHandlar(navbar, "sv"),
         dashboard: customLangHandlar(dashboard, "sv"),
         header: customLangHandlar(header, "sv"),
+        userPages: customLangHandlar(userPages, "sv"),
       },
     },
     lng: "en", // Default language

@@ -1,0 +1,108 @@
+{
+    "handleUsers": {
+      "en": "Handle user accounts",
+      "sv": "Hantera användarkonton"
+    },
+    "handleUsersInfo": {
+      "en": "Bovision retrieves your data from your company's brokerage system. To make changes related to your profile, make changes in the brokerage system and it will also be updated here.",
+      "sv": "Bovision hämtar dina uppgifter från ditt företags mäklarsystem. För att göra ändringar som har med din profil att göra, gör ändringar i mäklarsystemet så kommer det även att uppdateras här."
+    }, 
+    "accountsAndRights": {
+        "en": "Accounts and rights", 
+        "sv": "Konton och behörigheter"
+    }, 
+    "officeAndId": {
+        "en": "Office and Bovision-ID", 
+        "sv": "Kontor och Bovision-ID"
+    }, 
+    "companyName": {
+        "en": "Company name", 
+        "sv": "Företagsnamn"
+    }, 
+    "email": {
+        "en": "E-mail", 
+        "sv": "E-post"
+    }, 
+    "phone": {
+        "en": "Phone number", 
+        "sv": "Telefonnummer"
+    },
+    "officeAdmin": {
+        "en": "Office Admin", 
+        "sv": "Kontorsadministratör"
+    },
+    "yourRights": {
+        "en": "Your rights", 
+        "sv": "Dina behörigheter"
+    }, 
+    "rights": {
+        "en": "Rights", 
+        "sv": "Rättigheter"
+    },
+    "addUser": {
+        "en": "Add user to office", 
+        "sv": "Lägg till användare till kontor"
+    }, 
+    "role": {
+        "en": "Role", 
+        "sv": "Roll"
+    }, 
+    "addUserBtn": {
+        "en": "Add user", 
+        "sv": "Lägg till"
+    },
+    "addUserDropdownOption1": {
+        "en": "Option1", 
+        "sv": "Alternativ1"
+    }, 
+    "addUserDropdownOption2": {
+        "en": "Option2", 
+        "sv": "Alternativ2"
+    }, 
+    "addUserDropdownOption3": {
+        "en": "Option3", 
+        "sv": "Alternativ3"
+    }, 
+    "addUserDropdownOption4": {
+        "en": "Option4", 
+        "sv": "Alternativ4"
+    }, 
+    "firstName": {
+        "en": "First name", 
+        "sv": "Förnamn"
+    }, 
+    "lastName": {
+        "en": "Last name",
+        "sv": "Efternamn"
+    }, 
+    "title" : {
+        "en": "Title", 
+        "sv": "Titel"
+    }, 
+    "officeUsers": {
+        "en": "Office Users", 
+        "sv": "Kontorets användare"
+    }, 
+    "userStatus": {
+        "en": "User status", 
+        "sv": "Användarstatus"
+    }, 
+    "administerUser": {
+        "en": "Administer users", 
+        "sv": "Administrera användare"
+    }, 
+    "superAdmin": {
+        "en": "Super Admin", 
+        "sv": "Super Admin"
+    }, 
+    "user": {
+        "en": "User", 
+        "sv": "Användare"
+    }
+
+
+
+   
+
+    
+  }

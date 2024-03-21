@@ -1,0 +1,106 @@
+.handleUser {
+    width: 1060px;
+}
+
+
+.users-infotext {
+    width: 50%;
+}
+
+.formUnit {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+}
+
+.formUnit label {
+    color: rgba(102, 91, 91, 0.90);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.formUnit input {
+    border-radius: 4px;
+    border: 1px solid #D0D0D0;    
+    height: 40px;
+    padding-left: 12px;
+}
+
+.disabled {
+    background: #F2F2F2;
+}
+
+.formUnit select {
+    height: 40px;
+    padding-left: 12px;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+}
+
+
+.currentUserRights {
+    display: flex;
+    gap: 24px;
+}
+
+.btnPositionDiv {
+    
+    margin: 20px 0px;
+    display: flex;
+    justify-content: flex-end;    
+    gap: 20px;
+}
+
+.addUserBtn {
+    color: white;
+    background: #08437A;
+    width: 124px;
+    height: 40px;    
+    border-radius: 6px;
+    border: 0px;
+}
+
+.userRightsList {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    gap: 20px;
+    height: 40px;
+    
+}
+
+.rightsNugget {
+
+}
+
+.rightsNugget p {
+    padding: 0px 5px;
+    background: lightblue;
+    border: 1px solid grey;
+    border-radius: 4px;
+    
+}
+.officeUsersHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+.userStyleInline {
+    display: flex;
+    gap: 20px;
+}
+
+hr {
+    margin: 30px 0px;
+}
+
+/* MOBILVY */
+/* TODO : Styla allt... */
+@media (max-width: 1380px) {
+    .currentUserRights {
+        flex-direction: column;
+    }
+
+}

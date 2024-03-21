@@ -1,18 +1,16 @@
 .dashboardMenuContent {
     margin-left: 40px;
     height: 100%;
+    width: 280px;
 }
-.dashboardMenuContent h1 {
+.dashboardMenuContent .menuLogo {
     margin-bottom: 72px;
     padding-top: 48px;
     font-weight: 400;
 }
 .dashboardMenuOptions {
     display: flex;
-    flex-direction: column;
-    
-
-    
+    flex-direction: column;   
 
 }
 

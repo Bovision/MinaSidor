@@ -1,12 +1,13 @@
 .dashboardHeader {
+    padding-left: 280px;
+    /* position: absolute; */
     background-color: #F9FAFC;
-    width: 900px;
-    
     height: 120px;
+    width: calc(100% - 280px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-     
+
 }
 .dashboardHeaderLeft {
     margin-left: 20px;
@@ -16,6 +17,7 @@
     margin-right: 20px;
     display: flex;
     align-items: center;
+    
 }
 .dashboardHeaderRight p {
     margin-left: 10px;

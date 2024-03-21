@@ -1,0 +1,13 @@
+
+
+.MainModal {
+    position: fixed;
+    top: 100px;
+    left: calc(50vw - 302px);
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.459);
+    width: 604px;
+    height: 664px;
+    background-color: white;
+    border-radius: 12px;
+    z-index: 2;
+}
