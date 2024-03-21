@@ -1,11 +1,13 @@
 
+
 import { useTranslation } from "react-i18next";
+
 
 
 import './Dashboard.css';
 
 const Dashboard = () => {
-    const { t } = useTranslation("dashboard");
+   // const { t } = useTranslation("dashboard");
     
     return (
         <div className="dashboard">
