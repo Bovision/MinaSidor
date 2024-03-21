@@ -1,25 +1,34 @@
 .dashboard {
     display: flex;
-    height: 100%;
+    /* height: 100%; */
     border-radius: 12px 12px 12px 12px;
     background-color: white;
 }
 
 .dashboardHeader {
+    position: fixed;
+    
     border-radius: 0px 12px 0px 0px;
     border-bottom: 1px solid var(--Linjer, #D0D0D0);
     background: #F9FAFC;
 }
 
 .dashboardMenu {
+    position: fixed;
+    top: 0px;
+    height: 100%;
     border-radius: 12px 0px 0px 12px; 
     border-right: 1px solid var(--Linjer, #D0D0D0);
     background: #F9FAFC;
     width: 280px;
+    z-index: 10;
 }
 
 .dashboardContent {
+    
     padding: 20px; 
+    
+    
 }
 .rubrik {
     color: #000;
@@ -28,10 +37,20 @@
     font-weight: 500;
     line-height: normal;
 }
+.REA-header {
+    width: 80%;
+}
+.REA-page {
+    width: calc(1420px - 280px);
+}
 .REA-infotext {
     width: 65%;
 }
 .REAadvertiseAdsBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 40px;
     width: 227px;
     height: 40px;
     border-radius: 6px;
@@ -41,7 +60,6 @@
     margin-top: 32px;
     color: var(--Black-coal, rgba(40, 40, 40, 0.90));
     text-align: center;
-    /* font-family: Poppins; */
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -51,6 +69,8 @@
     margin-top: 46px;
     display: flex;
     justify-content: space-between;
+    
+    
 }
 .mellanrubrik {
     color: #000;
@@ -59,9 +79,50 @@
     font-weight: 500;
     line-height: normal;
 }
+.REA-searchCluster {
+    display: flex;
+    margin-right: 15px;
+}
 .REA-searchField {
     border-radius: 6px;
     border: 1px solid #9D8989;   
     background: #FFF;
     padding-left: 20px;
+    
+}
+.REA-cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.ProductCardRender {
+    margin-top: 32px;
+}
+
+@media (max-width: 1459px) {
+    .REA-page {
+        width: 70vw;
+    }
+    .REA-searchCluster {
+        display: flex;
+        
+        margin-right: 45px;
+    }
+
+}
+
+/* MOBILVY */
+/* TODO : Styla allt... */
+@media (max-width: 1100px) {
+    .REA-page {
+        
+        width: 70vw;
+    }
+    .REA-searchCluster {
+        display: flex;
+        width: 50%;
+        margin-right: 45px;
+    }
+
 }

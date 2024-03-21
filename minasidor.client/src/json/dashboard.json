@@ -46,6 +46,10 @@
     "portal": {
         "en": "Customer Portal",
         "sv": "Kundportalen"
+    }, 
+    "landingPage": {
+        "en": "Customer portal", 
+        "sv": "Kundportalen"
     }
 
     

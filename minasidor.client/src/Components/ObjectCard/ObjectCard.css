@@ -1,0 +1,69 @@
+.objectCard {
+    display: flex;
+    flex-direction: column;
+    width: 260px ;
+    height: 308px;
+    
+    margin: 0px 12px;
+    justify-content: space-between;
+}
+.objectCard img {
+    border-radius: 4px;
+}
+.ObjectCardInfo {
+
+}
+.ObjectCardInfo h3{
+    color: rgba(13, 91, 173, 0.90);
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+.ObjectCardInfo .area{
+    color: var(--Night-Forest, rgba(17, 24, 18, 0.90));
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+.ObjectCardInfo .type{
+    color: rgba(0, 0, 0, 0.90);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+.ObjectCardInfo .price{
+    color: rgba(0, 0, 0, 0.90);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.25px;
+}
+
+
+
+
+
+
+
+
+.ObjectCardFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--Bovision-gr, rgba(102, 91, 91, 0.90));
+
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.25px;
+    
+}

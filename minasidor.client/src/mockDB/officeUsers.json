@@ -1,0 +1,51 @@
+[
+    {
+        "img": "/src/assets/1.png",
+        "firstName": "Therese", 
+        "lastName": "Johansson", 
+        "title": "Fastighetsmäklare", 
+        "company": "Bovision",
+        "office":"Bovision Göteborg",
+        "bvID": "112233",
+        "email": "therese.johansson@bovision.se", 
+        "tele": "0704-123456",
+        "officeAdmin": true,
+        "rights": [
+            "officeAdmin", 
+            "user"
+        ], 
+        "active": true
+    },
+    {
+        "img": "/src/assets/2.png",
+        "firstName": "Pia", 
+        "lastName": "Livander", 
+        "title": "Mäklarassistent", 
+        "company": "Bovision",
+        "office":"Bovision Göteborg",
+        "bvID": "112233",
+        "email": "pia.livander@bovision.se", 
+        "tele": "0704-456789",
+        "officeAdmin": false,
+        "rights": [ 
+            "user"
+        ], 
+        "active": true
+    },
+    {
+        "img": "/src/assets/3.png",
+        "firstName": "Per", 
+        "lastName": "Andersson", 
+        "title": "Säljare", 
+        "company": "Bovision",
+        "office":"Bovision Göteborg",
+        "bvID": "112233",
+        "email": "per.andersson@bovision.se", 
+        "tele": "0704-123123",
+        "officeAdmin": false,
+        "rights": [ 
+            "user"
+        ], 
+        "active": true
+    }
+]
