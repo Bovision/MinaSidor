@@ -43,7 +43,7 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(appSettings.SecretKey)),
         ClockSkew = TimeSpan.FromSeconds(0)
         };
-});
+}).AddCookie("Identity.Application");
 
 builder.Services.AddScoped<ApplicationDbContextInitialiser>();
 builder.Services.AddTransient<UserService>();

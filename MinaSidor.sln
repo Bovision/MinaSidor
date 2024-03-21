@@ -9,9 +9,11 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "minasidor.client", "minasid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BvCore", "..\bvcore\BvCore.csproj", "{E16A0FC7-CF9A-4E50-BFDA-BFBFC8C1510D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7A48B425-D6D2-481C-BB6C-844429FD3E9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{7A48B425-D6D2-481C-BB6C-844429FD3E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{284209FE-3DE4-411C-A3C0-DB9F4BFBD10B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{284209FE-3DE4-411C-A3C0-DB9F4BFBD10B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{D056B6A2-97D9-4D4E-A647-1D03C187CD82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{284209FE-3DE4-411C-A3C0-DB9F4BFBD10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{284209FE-3DE4-411C-A3C0-DB9F4BFBD10B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{284209FE-3DE4-411C-A3C0-DB9F4BFBD10B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D056B6A2-97D9-4D4E-A647-1D03C187CD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D056B6A2-97D9-4D4E-A647-1D03C187CD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D056B6A2-97D9-4D4E-A647-1D03C187CD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D056B6A2-97D9-4D4E-A647-1D03C187CD82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

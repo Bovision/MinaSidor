@@ -1,4 +1,5 @@
 ﻿using Bovision;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cluster.Controllers.bvadmin
     {
+    [Authorize(Roles = "Administrator,admin")]
     public class AgentController : Controller
         {
         public IActionResult Index()

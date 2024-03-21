@@ -18,6 +18,7 @@ namespace Service.UserGroup
 
         private async Task<UserLoginResponse> GenerateUserToken(ApplicationUser user)
         {
+
             var claims = (from ur in _context.UserRoles
                           where ur.UserId == user.Id
                           join r in _context.Roles on ur.RoleId equals r.Id
@@ -27,6 +28,12 @@ namespace Service.UserGroup
               .Select(rc => new Claim(rc.ClaimType ?? "", rc.ClaimValue ?? ""))
               .Distinct()
               .ToList();
+            var Roles = new List<string>(await userManager.GetRolesAsync(user));
+
+            foreach (var role in Roles)
+                {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+                }
             var token = TokenUtil.GetToken(_tokenSettings, user, claims);
             await _userManager.RemoveAuthenticationTokenAsync(user, "REFRESHTOKENPROVIDER", "RefreshToken");
             var refreshToken = await _userManager.GenerateUserTokenAsync(user, "REFRESHTOKENPROVIDER", "RefreshToken");

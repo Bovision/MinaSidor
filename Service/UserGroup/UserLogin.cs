@@ -25,6 +25,7 @@
                 var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, true);
                 if (result.Succeeded)
                 {
+                    var result2 = await _signInManager.PasswordSignInAsync(user, request.Password, true, lockoutOnFailure: false);
                     var token = await GenerateUserToken(user);
                     return new AppResponse<UserLoginResponse>().SetSuccessResponse(token);
                 }

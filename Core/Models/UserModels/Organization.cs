@@ -1,9 +1,9 @@
-﻿namespace MinaSidor.Server.Models.UserModels
+﻿namespace Core.Models.UserModels
     {
     public class Organization
         {
-        public int OrganizationId { get; set; }
 
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public List<Office> Offices { get; set; }
