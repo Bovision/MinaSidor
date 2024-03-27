@@ -76,8 +76,6 @@ public partial class Customer
     public int? InvoicedAmount2015 { get; set; }
 
     public bool IsSpider { get; set; }
-
-    public string? SystemKundId { get; set; }
-
     public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
-}
+    public virtual ICollection<Orderitem> Orderitems { get; set; } = new List<Orderitem>();
+    }

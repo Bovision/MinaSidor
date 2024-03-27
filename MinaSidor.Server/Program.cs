@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using MinaSidor.Server.wwwroot;
+using Service.Bvadmin;
+using Service.Bvadmin.Services;
+using Service.Bvadmin.Interfaces;
+using Service.UserModel;
 var builder = WebApplication.CreateBuilder(args);
 var appSettings = builder.Configuration.GetSection("TokenSettings").Get<TokenSettings>() ?? default!;
 builder.Services.AddSingleton(appSettings);
@@ -45,7 +50,11 @@ builder.Services.AddAuthentication(options =>
         };
 }).AddCookie("Identity.Application");
 
-builder.Services.AddScoped<ApplicationDbContextInitialiser>();
+builder.Services.AddScoped<ApplicationDbContextInitialiser>(); 
+builder.Services.AddScoped<ICustomer, CustomerService> ();
+builder.Services.AddScoped<IOrder, OrderService>();
+builder.Services.AddScoped<IProduct, ProductService>();
+builder.Services.AddScoped<IUserModel, UserModelService>();
 builder.Services.AddTransient<UserService>();
 
 
@@ -64,6 +73,7 @@ builder.Services.AddCors(options =>
         .AllowCredentials();
     });
 });
+
 
 builder.Services.AddSwaggerGen(config =>
 {

@@ -4,6 +4,7 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240322134307_db1")]
+    partial class db1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -807,396 +810,6 @@ namespace Data.Migrations
                     b.ToTable("invoicerow", (string)null);
                 });
 
-            modelBuilder.Entity("Core.DataCore.Orderitem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool?>("Active")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("bit")
-                        .HasComputedColumnSql("(CONVERT([bit],case when [deleted]<='1901-01-01' AND ([contractends]<='1901-01-01' OR [contractends]>getdate()) AND ([contractstarts]<='1901-01-01' OR [contractstarts]<getdate()) then (1) else (0) end,0))", false);
-
-                    b.Property<string>("Address1")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("address1");
-
-                    b.Property<string>("Address2")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("address2");
-
-                    b.Property<string>("Address3")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("address3");
-
-                    b.Property<string>("Bywho")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("bywho");
-
-                    b.Property<DateTime?>("Contractends")
-                        .HasColumnType("datetime")
-                        .HasColumnName("contractends");
-
-                    b.Property<DateTime?>("Contractstarts")
-                        .HasColumnType("datetime")
-                        .HasColumnName("contractstarts");
-
-                    b.Property<string>("Countrycode")
-                        .HasMaxLength(2)
-                        .HasColumnType("nvarchar(2)")
-                        .HasColumnName("countrycode");
-
-                    b.Property<string>("Currency")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("currency");
-
-                    b.Property<int?>("Customerid")
-                        .HasColumnType("int")
-                        .HasColumnName("customerid");
-
-                    b.Property<DateTime?>("Deleted")
-                        .HasColumnType("datetime")
-                        .HasColumnName("deleted");
-
-                    b.Property<double?>("Discount")
-                        .HasColumnType("float")
-                        .HasColumnName("discount");
-
-                    b.Property<string>("How")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("how");
-
-                    b.Property<int?>("Invoicecyclesinmonths")
-                        .HasColumnType("int")
-                        .HasColumnName("invoicecyclesinmonths");
-
-                    b.Property<int?>("Invoiceto")
-                        .HasColumnType("int")
-                        .HasColumnName("invoiceto");
-
-                    b.Property<DateTime?>("Orderdate")
-                        .HasColumnType("datetime")
-                        .HasColumnName("orderdate");
-
-                    b.Property<string>("Ordernr")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("ordernr");
-
-                    b.Property<string>("Postalarea")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("postalarea");
-
-                    b.Property<string>("Postalcode")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("postalcode");
-
-                    b.Property<int?>("Productid")
-                        .HasColumnType("int")
-                        .HasColumnName("productid");
-
-                    b.Property<string>("Reference")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("reference");
-
-                    b.Property<double?>("Specialprice")
-                        .HasColumnType("float")
-                        .HasColumnName("specialprice");
-
-                    b.Property<int?>("Vatid")
-                        .HasColumnType("int")
-                        .HasColumnName("vatid");
-
-                    b.HasKey("Id")
-                        .HasName("PK__orderite__3213E83F5B844AED");
-
-                    b.HasIndex("Productid");
-
-                    b.ToTable("orderitem", null, t =>
-                        {
-                            t.HasTrigger("TR_OrderItem");
-                        });
-
-                    b.HasAnnotation("SqlServer:UseSqlOutputClause", false);
-                });
-
-            modelBuilder.Entity("Core.DataCore.Ovfakturahistorik", b =>
-                {
-                    b.Property<int>("Year")
-                        .HasColumnType("int")
-                        .HasColumnName("YEAR");
-
-                    b.Property<int>("Month")
-                        .HasColumnType("int")
-                        .HasColumnName("MONTH");
-
-                    b.Property<int>("NMaklarid")
-                        .HasColumnType("int")
-                        .HasColumnName("N_MAKLARID");
-
-                    b.Property<int?>("NAntal")
-                        .HasColumnType("int")
-                        .HasColumnName("N_ANTAL");
-
-                    b.Property<int?>("NOvAnnonspaket")
-                        .HasColumnType("int")
-                        .HasColumnName("N_OV_ANNONSPAKET");
-
-                    b.Property<int?>("NSumma")
-                        .HasColumnType("int")
-                        .HasColumnName("N_SUMMA");
-
-                    b.HasKey("Year", "Month", "NMaklarid")
-                        .HasName("PK__OVFAKTURAHISTORI__481183C6");
-
-                    b.ToTable("OVFAKTURAHISTORIK", (string)null);
-                });
-
-            modelBuilder.Entity("Core.DataCore.Ovfakturaunderlag", b =>
-                {
-                    b.Property<int>("LOvfakturaunderlagId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("l_OVFakturaunderlagID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LOvfakturaunderlagId"));
-
-                    b.Property<bool>("BFakturerad")
-                        .HasColumnType("bit")
-                        .HasColumnName("b_fakturerad");
-
-                    b.Property<DateTime>("DatDatum")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("smalldatetime")
-                        .HasColumnName("dat_datum")
-                        .HasDefaultValueSql("(convert(datetime,(convert(varchar(10),getdate(),102) + ' 00:00:00')))");
-
-                    b.Property<DateTime?>("DatFakturadatum")
-                        .HasColumnType("datetime")
-                        .HasColumnName("dat_fakturadatum");
-
-                    b.Property<DateTime?>("DatStop")
-                        .HasColumnType("datetime")
-                        .HasColumnName("DAT_STOP");
-
-                    b.Property<int>("LObjektnr")
-                        .HasColumnType("int")
-                        .HasColumnName("l_objektnr");
-
-                    b.Property<short?>("NFakturatyp")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("smallint")
-                        .HasDefaultValue((short)1)
-                        .HasColumnName("n_fakturatyp");
-
-                    b.Property<short?>("NLankom")
-                        .HasColumnType("smallint")
-                        .HasColumnName("n_lankom");
-
-                    b.Property<short>("NMaklarid")
-                        .HasColumnType("smallint")
-                        .HasColumnName("n_maklarid");
-
-                    b.Property<short>("NTyp")
-                        .HasColumnType("smallint")
-                        .HasColumnName("n_typ");
-
-                    b.Property<string>("SAdress")
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("s_adress");
-
-                    b.Property<string>("SOmrade")
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("s_omrade");
-
-                    b.HasKey("LOvfakturaunderlagId");
-
-                    b.HasIndex(new[] { "NMaklarid", "DatDatum", "LObjektnr", "NFakturatyp" }, "IDX_OVFakturaunderlag_MaklaridDatumObjektnr")
-                        .IsUnique()
-                        .HasFilter("[n_fakturatyp] IS NOT NULL");
-
-                    SqlServerIndexBuilderExtensions.HasFillFactor(b.HasIndex(new[] { "NMaklarid", "DatDatum", "LObjektnr", "NFakturatyp" }, "IDX_OVFakturaunderlag_MaklaridDatumObjektnr"), 90);
-
-                    b.ToTable("OVFakturaunderlag", (string)null);
-                });
-
-            modelBuilder.Entity("Core.DataCore.Ovrabatt", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool?>("BAktiv")
-                        .HasColumnType("bit")
-                        .HasColumnName("b_aktiv");
-
-                    b.Property<DateTime?>("DatAndrad")
-                        .HasColumnType("datetime")
-                        .HasColumnName("dat_andrad");
-
-                    b.Property<DateTime?>("DatSkapad")
-                        .HasColumnType("datetime")
-                        .HasColumnName("dat_skapad");
-
-                    b.Property<DateTime?>("DatUpphor")
-                        .HasColumnType("datetime")
-                        .HasColumnName("DAT_UPPHOR");
-
-                    b.Property<int?>("NMaklarid")
-                        .HasColumnType("int")
-                        .HasColumnName("n_maklarid");
-
-                    b.Property<int?>("Pakettyp")
-                        .HasColumnType("int")
-                        .HasColumnName("PAKETTYP");
-
-                    b.Property<int?>("Rabattprocent")
-                        .HasColumnType("int")
-                        .HasColumnName("RABATTPROCENT");
-
-                    b.Property<int?>("RabattprocentInfo")
-                        .HasColumnType("int")
-                        .HasColumnName("RABATTPROCENT_INFO");
-
-                    b.Property<string>("SKommentar")
-                        .HasMaxLength(255)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(255)")
-                        .HasColumnName("s_kommentar");
-
-                    b.HasKey("Id")
-                        .HasName("PK__OVRabatt__3214EC276BBAB2B6");
-
-                    b.ToTable("OVRabatt", (string)null);
-                });
-
-            modelBuilder.Entity("Core.DataCore.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Code")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("code");
-
-                    b.Property<string>("Currency")
-                        .HasMaxLength(3)
-                        .HasColumnType("nchar(3)")
-                        .HasColumnName("currency")
-                        .IsFixedLength();
-
-                    b.Property<DateTime>("Deleted")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("description");
-
-                    b.Property<int>("InvoiceCyclesInMoths")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(1);
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("name");
-
-                    b.Property<string>("Notes")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("notes");
-
-                    b.Property<int>("OrderCanOverridePrice")
-                        .HasColumnType("int");
-
-                    b.Property<double?>("Price")
-                        .HasColumnType("float")
-                        .HasColumnName("price");
-
-                    b.Property<int?>("Pricetype")
-                        .HasColumnType("int")
-                        .HasColumnName("pricetype");
-
-                    b.Property<string>("Rules")
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)")
-                        .HasColumnName("rules");
-
-                    b.Property<string>("Type")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("type");
-
-                    b.Property<string>("Unit")
-                        .HasMaxLength(10)
-                        .HasColumnType("nchar(10)")
-                        .HasColumnName("unit")
-                        .IsFixedLength();
-
-                    b.Property<int?>("Vatid")
-                        .HasColumnType("int")
-                        .HasColumnName("vatid");
-
-                    b.HasKey("Id")
-                        .HasName("PK__product__3213E83F57B3BA09");
-
-                    b.ToTable("product", (string)null);
-                });
-
-            modelBuilder.Entity("Core.DataCore.ProductPrice", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
-
-                    b.Property<string>("CurrencyCode")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nchar(3)")
-                        .IsFixedLength();
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex(new[] { "ProductId" }, "ix_ProductId");
-
-                    b.ToTable("ProductPrice", (string)null);
-                });
-
             modelBuilder.Entity("Core.Models.Boostning.Boost", b =>
                 {
                     b.Property<int>("Id")
@@ -1650,17 +1263,17 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5fb558cb-3aac-47c2-804d-171e283bb4e7",
+                            Id = "006d0ee5-1d05-4204-9a0a-f1a4ccc587a4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "985e96f0-46cf-4e46-9a8b-289c8979555e",
+                            ConcurrencyStamp = "db157c3f-03c6-47f2-af5e-1729137e4778",
                             Email = "admin@bovision.se",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@bovision.se",
                             NormalizedUserName = "admin@bovision.se",
-                            PasswordHash = "AQAAAAIAAYagAAAAENdOfXZzKblXzZokst32vCrfnC7u3HmDgM4dSQwqWUHU9+xmJ9/kNaQQFtgaw2bZDg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMqjyq1rTsBAXXC970rI2CKCOhmXKOW/uvwM6g+kg1N5/q/RrcbyNGXHGmw0VdiwbQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d7873d41-a0a0-4de1-97ea-c2d8f0ce04e9",
+                            SecurityStamp = "4fbfb7fa-2ef4-4e56-96cf-1fcf6f5de5cb",
                             TwoFactorEnabled = false,
                             UserName = "admin@bovision.se"
                         });
@@ -1695,13 +1308,13 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "fa15c2cd-2e3d-4857-b695-1ac55079e4bc",
+                            Id = "a7f9357d-a30d-4153-97a8-28832b1a4343",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "8fc9d591-a9ee-42f3-9187-73beaa59e519",
+                            Id = "63bd1968-4d32-4503-8034-cf93ec31ae0f",
                             Name = "Administrator",
                             NormalizedName = "Administrator"
                         });
@@ -1796,8 +1409,8 @@ namespace Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "5fb558cb-3aac-47c2-804d-171e283bb4e7",
-                            RoleId = "8fc9d591-a9ee-42f3-9187-73beaa59e519"
+                            UserId = "006d0ee5-1d05-4204-9a0a-f1a4ccc587a4",
+                            RoleId = "63bd1968-4d32-4503-8034-cf93ec31ae0f"
                         });
                 });
 
@@ -1829,16 +1442,6 @@ namespace Data.Migrations
                         .HasConstraintName("fk_invoice_customer");
 
                     b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Core.DataCore.Orderitem", b =>
-                {
-                    b.HasOne("Core.DataCore.Product", "Product")
-                        .WithMany("Orderitems")
-                        .HasForeignKey("Productid")
-                        .HasConstraintName("fk_orderitem_product");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Core.Models.Boostning.Boost", b =>
@@ -1987,11 +1590,6 @@ namespace Data.Migrations
             modelBuilder.Entity("Core.DataCore.Customer", b =>
                 {
                     b.Navigation("Invoices");
-                });
-
-            modelBuilder.Entity("Core.DataCore.Product", b =>
-                {
-                    b.Navigation("Orderitems");
                 });
 
             modelBuilder.Entity("Core.Models.Estate", b =>

@@ -1,8 +1,8 @@
 ﻿namespace MinaSidor.Server.ViewModels
-    {
+{
 
     public class UserViewModel
-        {
+    {
         public string Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
@@ -13,6 +13,6 @@
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public IList<string> Role { get; set; }
-        }
-
     }
+
+}

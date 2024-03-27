@@ -5,7 +5,9 @@ namespace MinaSidor.Server.Controllers
     {
     [Route("api/[controller]")]
     [ApiController]
+
     public class EkonomiController : ControllerBase
         {
+
         }
     }

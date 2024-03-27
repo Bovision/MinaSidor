@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Core.DataCore;
 
 public partial class Invoice
 {
+    [JsonIgnore]
+    public virtual Customer Customer { get; set; }
     public int Id { get; set; }
 
     public string? Name { get; set; }
@@ -99,5 +102,4 @@ public partial class Invoice
 
     public string ExternalId { get; set; } = null!;
 
-    public virtual Customer Customer { get; set; } = null!;
 }
