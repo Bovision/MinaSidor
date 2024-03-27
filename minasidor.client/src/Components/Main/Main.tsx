@@ -4,8 +4,8 @@ import React, { useContext } from 'react'
 
 import './Main.css'
 // import LandingPage from '../LandingPage/LandingPage'
-import DashBoard from '../Dashboard/Dashboard'
 
+import DashBoard from '../Dashboard/Dashboard'
 
 import DashboardAnnonser from '../Dashboard/DashboardAnnonser/DashboardAnnonser'
 import DashboardIntresse from '../Dashboard/DashboardIntresse/DashboardIntresse'
