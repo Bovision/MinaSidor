@@ -1,8 +1,9 @@
-﻿using Core.Models;
+﻿using Core.DataCore;
+using Core.Models;
 namespace Service.Bvadmin.Interfaces
 {
     public interface IEstate
         {
-        Task<List<int>> getEstates(int UserId);
+        Task<List<BostadViewModel>> getEstates(int UserId);
         }
     }

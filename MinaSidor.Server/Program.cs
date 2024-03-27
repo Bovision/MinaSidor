@@ -55,6 +55,7 @@ builder.Services.AddScoped<ICustomer, CustomerService> ();
 builder.Services.AddScoped<IOrder, OrderService>();
 builder.Services.AddScoped<IProduct, ProductService>();
 builder.Services.AddScoped<IUserModel, UserModelService>();
+builder.Services.AddScoped<IEstate, EstateService>();
 builder.Services.AddTransient<UserService>();
 
 

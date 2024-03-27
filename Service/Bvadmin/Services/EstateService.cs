@@ -1,4 +1,6 @@
-﻿using Data;
+﻿using Core.DataCore;
+using Data;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,11 +20,11 @@ namespace Service.Bvadmin.Services
             _applicationDbContext = applicationDbContext;
             }
 
-        public Task<List<int>> getEstates(int UserId)
+        public async Task<List<BostadViewModel>> getEstates(int UserId)
             {
-           var res= _applicationDbContext.Database.ExecuteSqlRaw("SELECT L_OBJEKTNR FROM Bostad WHERE N_MAKLARID = {0}", UserId);
-            return null;
+            var res = await _applicationDbContext.BostadViewModel.Where(x => x.N_MAKLARID == UserId).ToListAsync(); 
 
+            return res;
             }
         }
     }

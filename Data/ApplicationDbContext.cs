@@ -300,6 +300,12 @@ namespace Data
                 entity.Property(e => e.NOvAnnonspaket).HasColumnName("N_OV_ANNONSPAKET");
                 entity.Property(e => e.NSumma).HasColumnName("N_SUMMA");
             });
+            modelBuilder.Entity<BostadViewModel>(entity =>
+            {
+                entity.HasNoKey(); // Indicates that the entity does not have a primary key
+
+                entity.ToView("EstateHandler"); // Maps the entity to a database view
+            });
 
             modelBuilder.Entity<Ovfakturaunderlag>(entity =>
             {
@@ -599,6 +605,7 @@ namespace Data
         public virtual DbSet<Ovrabatt> Ovrabatts { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductPrice> ProductPrices { get; set; }
+        public virtual DbSet<BostadViewModel> BostadViewModel { get; set; }
 
 
 
