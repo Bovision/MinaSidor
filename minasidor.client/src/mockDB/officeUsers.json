@@ -11,8 +11,8 @@
         "tele": "0704-123456",
         "officeAdmin": true,
         "rights": [
-            "officeAdmin", 
-            "user"
+            "officeAdmin"
+            
         ], 
         "active": true
     },

@@ -87,6 +87,10 @@
     width: 32px ;
 
 }
+.ModalUserCardRight select {
+    width: 220px;
+    height: 40px;
+}
 .btnSaveAdministerUsersModal {
     width: 97px;
     height: 40px;
@@ -103,7 +107,7 @@
 }
 
 .modalBtnContainer {
-    margin-top: 120px;
+    margin-top: 100px;
     /* Ovan är helt fel gjord. Vill positionera utefter nederkanten på modalen istället... */
     display: flex;
     justify-content: flex-end;
