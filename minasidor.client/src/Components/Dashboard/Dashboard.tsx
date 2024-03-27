@@ -12,6 +12,7 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <div>
+                <h1>Detta är "Dashboard"</h1>
                 <p className='rubrik'>{t('landingPage')}</p>
             </div>
         </div>

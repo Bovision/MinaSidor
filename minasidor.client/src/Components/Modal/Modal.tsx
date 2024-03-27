@@ -18,9 +18,14 @@ function Modal() {
 
   return (
     <div className='MainModal'>
-        Modal
+        {/* <p onClick={closeModal}>X</p> */}
         <ModalAdministerUsers />
-        <button onClick={closeModal}>Stäng</button>
+
+  
+    
+    
+      
+
     </div>
   )
 }

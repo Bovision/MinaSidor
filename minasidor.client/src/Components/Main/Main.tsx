@@ -42,9 +42,10 @@ const  Main = () => {
                         <Route path="/marknad" element={<DashboardMarknad />} />
                         <Route path="register" element={<RegisterPage />} />
                         <Route path="login" element={<LoginPage />} />
-                         <Route index element={<HomePage />} />
                         <Route path="/handleuser" element={<HandleUser />} />
                         <Route path="/search" element={<Search />} />
+
+                        <Route index element={<HomePage />} />
 
                     </Routes>
                 </div>

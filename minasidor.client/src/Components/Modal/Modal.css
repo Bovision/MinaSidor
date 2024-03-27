@@ -11,4 +11,103 @@
     border-radius: 12px;
     z-index: 2;
     backdrop-filter: ;
+    padding: 24px;
+}
+.closeX {
+    font-size: 1.5rem;
+}
+.modalInfo {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.32px;
+    margin-bottom: 46px;
+}
+.ModalAdministerUsersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.modalSearchBar {
+    display: flex;
+    justify-content: space-between;    
+    margin-bottom: 20px;
+}
+.modelUserListHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalSearchBar h2 {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;    
+}
+
+.modalSearchBar input {
+    width: 260px;
+    height: 40px;
+    
+}
+
+
+.ModalAdministerUsersHeader h1 {
+    color: #000;
+    
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ModalUser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #D0D0D0;
+    background: #FFF;
+    margin-top: 16px;
+    padding: 12px;
+}
+.ModalUserCardLeft {
+    display: flex;
+    align-items: center;
+}
+.ModalUserCardLeft p {
+    margin-left: 10px;
+    
+}
+.ModalUserCardLeft img {
+    width: 32px ;
+
+}
+.btnSaveAdministerUsersModal {
+    width: 97px;
+    height: 40px;
+    border-radius: 6px;
+    background: #08437A;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.modalBtnContainer {
+    margin-top: 120px;
+    /* Ovan är helt fel gjord. Vill positionera utefter nederkanten på modalen istället... */
+    display: flex;
+    justify-content: flex-end;
+
+    
+
 }
