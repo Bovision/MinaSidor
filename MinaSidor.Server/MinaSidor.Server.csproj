@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <PackageReference Include="Billogram.Simple.API" Version="1.0.1" />
-    <PackageReference Include="Facade" Version="1.1.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
     <PackageReference Include="Fortnox.NET.SDK" Version="4.3.15" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
@@ -52,36 +51,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="AjaxPro">
-      <HintPath>..\..\DLLs\AjaxPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Base">
-      <HintPath>..\..\DLLs\Base.dll</HintPath>
-    </Reference>
-    <Reference Include="BvCore">
-      <HintPath>..\..\DLLs\BvCore.dll</HintPath>
-    </Reference>
-    <Reference Include="DataCore">
-      <HintPath>..\..\DLLs\DataCore.dll</HintPath>
-    </Reference>
-    <Reference Include="DocumentFormat.OpenXml">
-      <HintPath>..\..\DLLs\DocumentFormat.OpenXml.dll</HintPath>
-    </Reference>
-    <Reference Include="DomainModel">
-      <HintPath>..\..\DLLs\DomainModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Facade">
-      <HintPath>..\..\DLLs\Facade.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\..\DLLs\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\DLLs\log4net.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
