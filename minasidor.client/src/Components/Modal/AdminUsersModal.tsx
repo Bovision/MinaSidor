@@ -7,6 +7,7 @@ import ModalAdministerUsers from './ModalAdministerUsers/ModalAdministerUsers';
 
 
 function Modal() {
+
 //   const { showModal, setShowModal } = useContext(ModalContext);
 
 //   function closeModal() {
@@ -14,21 +15,13 @@ function Modal() {
 //   }
 
 
-
-
   return (
     <div className='ModalBackdrop'>
         <div className='MainModal'>
 
-        <ModalAdministerUsers />
+          <ModalAdministerUsers />
 
         </div>
-
-  
-    
-    
-      
-
     </div>
   )
 }

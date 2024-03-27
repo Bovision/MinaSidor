@@ -38,7 +38,6 @@ function HandleUser() {
         
 function handleOpenAdminModal(){
     setShowModal(!showModal)
-    
 }
 
 

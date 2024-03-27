@@ -13,7 +13,7 @@ import DashboardLeads from '../Dashboard/DashboardLeads/DashboardLeads'
 import DashboardFakturering from '../Dashboard/DashboardFakturering/DashboardFakturering'
 import DashboardMarknad from '../Dashboard/DashboardMarknad/DashboardMarknad';
 import HandleUser from "../HandleUser/HandleUser";
-import Modal from "../Modal/Modal";
+import Modal from "../Modal/AdminUsersModal";
 import { RegisterPage } from "../pages/RegisterPage";
 import { LoginPage } from "../pages/LoginPage";
 import { HomePage } from "../pages/HomePage";

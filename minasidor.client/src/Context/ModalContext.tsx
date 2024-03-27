@@ -14,6 +14,8 @@ const ModalContextProvider = ({ children }: PropsWithChildren) => {
 
   // const [modal, setModal] = useState<IModal[]>([]);
 const [showModal, setShowModal] = useState(Boolean)
+const [showAdModal, setShowAdModal] = useState(Boolean)
+
 
 useEffect(()=> {
   console.log("Nu ska vi toggla modalen");
@@ -29,7 +31,9 @@ useEffect(()=> {
         // getObjects,
         // products,
         showModal, 
-        setShowModal 
+        setShowModal, 
+        showAdModal, 
+        setShowAdModal
 
       }}
     >
