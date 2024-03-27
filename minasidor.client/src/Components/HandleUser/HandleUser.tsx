@@ -144,7 +144,7 @@ function handleOpenAdminModal(){
             }
         
         <div className='btnPositionDiv'>
-            <button className='addUserBtn' onClick={handleOpenAdminModal}>{t('administerUser')}</button>
+            <button className='administerUserBtn' onClick={handleOpenAdminModal}>{t('administerUser')}</button>
             </div>
         {/* Här slutar "Lägg till användre"-segmentet */}
 

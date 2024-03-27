@@ -1,25 +1,28 @@
 
-import React, { useContext } from 'react'
+// import React, { useContext } from 'react'
 import './Modal.css'
-import { ModalContext } from '../../Context/ModalContext';
+// import { ModalContext } from '../../Context/ModalContext';
 import ModalAdministerUsers from './ModalAdministerUsers/ModalAdministerUsers';
 
 
 
 function Modal() {
-  const { showModal, setShowModal } = useContext(ModalContext);
+//   const { showModal, setShowModal } = useContext(ModalContext);
 
-  function closeModal() {
-    setShowModal(!showModal)
-  }
+//   function closeModal() {
+//     setShowModal(!showModal)
+//   }
 
 
 
 
   return (
-    <div className='MainModal'>
-        {/* <p onClick={closeModal}>X</p> */}
+    <div className='ModalBackdrop'>
+        <div className='MainModal'>
+
         <ModalAdministerUsers />
+
+        </div>
 
   
     

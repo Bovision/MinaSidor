@@ -3,10 +3,15 @@ import { useTranslation } from "react-i18next";
 //Import ev EXEMPELBILD
 import tessan from '../../../assets/profilbild_therese.jfif'
 import bell from '../../../assets/knapp_notiser.svg'
+import { useContext } from 'react';
+import { UserContext } from '../../../Context/UserContext';
 
 
 const DashboardHeader = () => {
     const { t } = useTranslation("dashboard");
+    const { users } = useContext(UserContext);
+
+    
     return (
         
         <div className="dashboardHeader">
@@ -17,7 +22,11 @@ const DashboardHeader = () => {
             <div className="dashboardHeaderRight">
                 <img src={bell} alt="" />
                 <img src={tessan} className="dashboardHeaderProfilePic"></img>
-                <p>Username</p>
+                {users && users.length > 0 ? 
+                    <p>{users![0].firstName}</p>
+                    :
+                    ""                
+                }
             </div>
             
         </div>
